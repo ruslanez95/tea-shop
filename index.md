@@ -72,7 +72,14 @@
 
     <button class="button" onclick="sendData('Зеленый чай')">Зеленый чай</button>
 
+<script>
+  window.Telegram.WebApp.ready();  // Говорим Telegram, что WebApp загружен
 
+  document.getElementById("myButton").addEventListener("click", function () {
+    window.Telegram.WebApp.sendData("Пользователь нажал кнопку!");
+    window.Telegram.WebApp.close();
+  });
+</script>
 
     <script>
 
