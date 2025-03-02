@@ -72,14 +72,6 @@
 
     <button class="button" onclick="sendData('Зеленый чай')">Зеленый чай</button>
 
-<script>
-  window.Telegram.WebApp.ready();  // Говорим Telegram, что WebApp загружен
-
-  document.getElementById("myButton").addEventListener("click", function () {
-    window.Telegram.WebApp.sendData("Пользователь нажал кнопку!");
-    window.Telegram.WebApp.close();
-  });
-</script>
 
     <script>
 
@@ -92,6 +84,19 @@
             tg.close();
 
         }
+
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tg = window.Telegram.WebApp;
+
+    // Получаем кнопку по ID
+    document.getElementById("myButton").addEventListener("click", function () {
+      // Отправляем данные обратно в Telegram
+      tg.sendData("Кнопка нажата!");  
+      tg.close();  // Закрываем WebApp после отправки
+    });
+  });
+</script>
 
     </script>
 
